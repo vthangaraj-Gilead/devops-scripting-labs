@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 echo -e "============== SYSTEM HEALTH CHECK ==============\\n"
 
