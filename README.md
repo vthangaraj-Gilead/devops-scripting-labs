@@ -2,7 +2,7 @@
 
 This repository contains a curated set of DevOps scripting exercises implemented using **Bash** and **Python**.
 
-The goal of this repository is to build and demonstrate **operational scripting capability** — not language mastery — by solving common, real-world DevOps scenarios typically encountered in Linux and AWS environments.
+The goal of this repository is to build and demonstrate **operational scripting capability** by solving common, real-world DevOps scenarios typically encountered in Linux and AWS environments.
 
 The problems are designed to progress from **very basic to mid-level complexity**, focusing on:
 - System observability
@@ -36,7 +36,7 @@ This repository represents **intentional skill development** through representat
 
 ## Repository Structure
 
-devops-scripting-labs/ ├── README.md ├── problem-01/ ├── problem-02/ ├── ... └── problem-10/
+devops-scripting-labs/ ├── README.md ├── problem-01/ ├── problem-02/ ├── ... └── problem-10/ ...
 
 
 Each problem directory contains:
