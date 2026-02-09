@@ -3,13 +3,13 @@
 ## Scenario
 
  - Applications hosted via Ec2 have logging enable to store in ec2 local stoage(EBS)(if not configured to store in external storage - S3, cloud watch)
- - Over time  application logs, system logs files size increases resulting in disk pressure
+ - Over time  application logs, system logs files size increases resulting in disk pressure in the ec2 server.
 
 ---
 
 ## Objective
 
-- Identify large files in for a required directory, so the engineers can later validate and take action(Delete / Log Rotate, etc...)
+- Identify large files for a target directory, so the Team can validate and take necessary action(Delete / Log Rotate, etc...)
 
 ---
 
@@ -22,15 +22,15 @@
 
 ## Expected Output
 
-- Files in Target Directory have size > Threshold size
+- Files in Target Directory that have size > Threshold size
 
 ---
 
 ## Constraints & Assumptions
 
-- AWS Ec2 Linux environment
+- AWS EC2 Linux environment
 - Threshold Size Input in MegaBytes (for human understanding instead of using bytes)
-- Execution Permissions provided (755)
+- Execution Permissions provided for the script (755)
 ---
 
 ## Suggested Approach
@@ -43,7 +43,7 @@ Use `find` command to search through files and use flags of `find` command to co
 
 ## Bash vs Python Consideration
 
-- Expected outcome can be achived using linux command, hence bash is preferred
+- Expected outcome can be achieved using linux command, hence bash is preferred
 
 ---
 
