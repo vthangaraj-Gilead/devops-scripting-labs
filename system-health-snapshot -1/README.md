@@ -1,4 +1,4 @@
-# Problem: System Health Snapshot
+# Problem <1>: System Health Snapshot
 
 ## Scenario
 

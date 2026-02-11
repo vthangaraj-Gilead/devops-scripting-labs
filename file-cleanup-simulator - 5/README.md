@@ -1,102 +1,67 @@
-# Problem <XX>: <Short Descriptive Title>
+# Problem <5>: File Cleanup Simulator
 
 ## Scenario
 
-Describe the real-world operational context.
-
-Explain **why** this problem exists in day-to-day DevOps work.
-Keep it practical and realistic.
-
-Example:
-> During routine operations, engineers often need to quickly verify the state of a system to identify potential issues before they escalate.
+- Unnecessary files or least accessed files are piled up over time
+- Leaving them be causes increases in disk usage
 
 ---
 
 ## Objective
 
-Clearly define what the script is expected to achieve.
-
-Focus on **outcome**, not implementation.
+- Identify & List files by age > No of days given as input (List Only)
 
 ---
 
 ## Inputs
 
-List any inputs the script should accept:
-- Command-line arguments
-- Environment variables
-- Configuration values
-
-If there are no inputs, explicitly say so.
+- Directory Path
+- No of Threshold days
 
 ---
 
 ## Expected Output
 
-Describe what the script should produce:
-- Terminal output
-- File output
-- Exit status
-- Summary report
-
-Avoid prescribing exact formatting.
+ - List all the files with age > than threshold days
 
 ---
 
 ## Constraints & Assumptions
 
-Clarify boundaries:
-- Linux environment
-- Read-only access (if applicable)
-- No destructive actions
-- Expected permissions
-
-This shows operational maturity.
+- AWS EC2 Linux environment
+- Python should be installed in the server
+- Execution permissions for the script (755)
 
 ---
 
 ## Suggested Approach
 
-Explain **how an engineer might think about solving this**, without giving code.
-
-Examples:
-- Which system commands might be useful
-- Whether iteration or condition checks are required
-- What should be validated before proceeding
-
-This section proves reasoning ability.
+- Fetch the input directory and Threshold days as input
+- Validate input is empty or the given directory is valid path in the server
+- Calculate the last modification date of all files in the directory
+- Caculate the no of days the file has aged from last modification date till now
+- Compare the file age days with threshold daysif greater print the file with path & no of days it is old
 
 ---
 
 ## Bash vs Python Consideration
 
-Explain **why Bash is suitable**, and **when Python may be preferred**.
+- Time Calculations can be easily done using python hence python is preferred.
 
-Example:
-- Bash is sufficient for simple command execution and parsing
-- Python may improve readability when handling structured data
-
-This is extremely interview-valuable.
-
----
 
 ## Edge Cases to Consider
 
-List things that could go wrong:
-- Missing inputs
-- Empty outputs
-- Permission issues
-- Unexpected command behavior
-
-Even if you don’t handle all of them in code, **acknowledging them matters**.
+- Threshold days Input can only accept integer values
+- This script only list files based on threshold days doesnt perform any destructive behaviour
+- This script logic is based on the last modification date of the file not the creation time of the file
+- If none of the files are greater than the threshold days, this logic is not included in the script
 
 ---
 
 ## Learning Outcome
 
-Briefly state what this problem helps you practice:
-- Bash fundamentals
-- Linux concepts
-- AWS CLI usage
-- Error handling
-- Automation thinking
+- Writing scripts in Python
+- Fetching inputs at run time in python
+- List files in a directory using `os` module
+- calculate time for file using `time` module
+- If and Loop Conditions

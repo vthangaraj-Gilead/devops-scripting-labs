@@ -1,4 +1,4 @@
-# Problem : Linux Process Watchdog
+# Problem <3>: Linux Process Watchdog
 
 ## Scenario
 
