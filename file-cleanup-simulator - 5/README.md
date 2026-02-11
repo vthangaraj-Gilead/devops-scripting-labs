@@ -3,7 +3,7 @@
 ## Scenario
 
 - Unnecessary files or least accessed files are piled up over time
-- Leaving them be causes increases in disk usage
+- Leaving them be causes increase in disk usage
 
 ---
 
@@ -37,7 +37,7 @@
 ## Suggested Approach
 
 - Fetch the input directory and Threshold days as input
-- Validate input is empty or the given directory is valid path in the server
+- Validate input is empty and the given directory is valid path in the server
 - Calculate the last modification date of all files in the directory
 - Caculate the no of days the file has aged from last modification date till now
 - Compare the file age days with threshold daysif greater print the file with path & no of days it is old
@@ -48,13 +48,14 @@
 
 - Time Calculations can be easily done using python hence python is preferred.
 
+---
 
 ## Edge Cases to Consider
 
 - Threshold days Input can only accept integer values
 - This script only list files based on threshold days doesnt perform any destructive behaviour
 - This script logic is based on the last modification date of the file not the creation time of the file
-- If none of the files are greater than the threshold days, this logic is not included in the script
+- If none of the files are greater than the threshold days, the script returns empty output
 
 ---
 
