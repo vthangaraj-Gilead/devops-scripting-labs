@@ -2,7 +2,7 @@
 
 ## Scenario
 
-- Need Ec2 instance summary without loggin into AWS console
+- Need Ec2 instance summary without logging into AWS console
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## Expected Output
 
-For all the instances within a given aws regiona, output should be
+For all the instances within a given aws region, output should be
 
 - Instance ID
 - Instance Type
@@ -40,8 +40,8 @@ For all the instances within a given aws regiona, output should be
 
 ## Suggested Approach
 
-- Validate Input & Exit if invalid or Empty Input is passed
-- Use Ec2 Describe instances aws cli command to fetch the instance deails f
+- Validate Input & Exit if invalid or Empty Input Region is passed
+- Use `Ec2 Describe instances` aws cli command to fetch the instance details
 
 ---
 
@@ -53,9 +53,9 @@ For all the instances within a given aws regiona, output should be
 
 ## Edge Cases to Consider
 
-- This script doesn't provide resource count symmary, only print ec2 instance details
-- Script doesnt handle logic if ec2 instances are empty for a given region
-- Output in text  for ec2 describe command sorts results in alphabetical order by column, no matter the query order, implementaion logic looping variables are assigned in that matter. Script should be updated if this outcome is not preferred.
+- This script doesn't provide resource count summary, only print ec2 instance details
+- Script doesn't handle logic if ec2 instances are empty for a given input region
+- Output in text for ec2 describe command sorts results in alphabetical order by column, no matter the query order, implementaion logic looping variables are assigned in that matter. Script should be updated if this outcome is not preferred.
 
 ---
 

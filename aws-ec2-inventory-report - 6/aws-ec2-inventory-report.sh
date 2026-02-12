@@ -11,7 +11,7 @@ if [ -z "$region" ]; then
    echo -e "Empty Inputs provided, Provide AWS region\\n"
    exit
 else
-   if echo "$(aws ec2 describe-regions --query 'Regions[].RegionName' --output text)" | grep -qw "$region"; then
+   if echo "$(aws ec2 describe-regions --query 'Regions[].RegionName' --output text)" | grep -qw "$region"; then ## provides output as a string instead of list
       echo -e "Valid AWS Region\\n"
    else
       echo "Invalid AWS Region"
