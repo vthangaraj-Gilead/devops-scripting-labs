@@ -1,102 +1,65 @@
-# Problem <XX>: <Short Descriptive Title>
+# Problem <6>: AWS EC2 Inventory Report
 
 ## Scenario
 
-Describe the real-world operational context.
-
-Explain **why** this problem exists in day-to-day DevOps work.
-Keep it practical and realistic.
-
-Example:
-> During routine operations, engineers often need to quickly verify the state of a system to identify potential issues before they escalate.
+- Need Ec2 instance summary without loggin into AWS console
 
 ---
 
 ## Objective
 
-Clearly define what the script is expected to achieve.
-
-Focus on **outcome**, not implementation.
+- Summarize Instance details for a given AWS region
 
 ---
 
 ## Inputs
 
-List any inputs the script should accept:
-- Command-line arguments
-- Environment variables
-- Configuration values
-
-If there are no inputs, explicitly say so.
+- AWS Region
 
 ---
 
 ## Expected Output
 
-Describe what the script should produce:
-- Terminal output
-- File output
-- Exit status
-- Summary report
+For all the instances within a given aws regiona, output should be
 
-Avoid prescribing exact formatting.
+- Instance ID
+- Instance Type
+- Instance State
+- Instance Public IP
+- Instance Availability Zone
 
 ---
 
 ## Constraints & Assumptions
 
-Clarify boundaries:
-- Linux environment
-- Read-only access (if applicable)
-- No destructive actions
-- Expected permissions
-
-This shows operational maturity.
+- AWS Linux Ec2 Server
+- AWS Cli installed
+- Server has iam role permissions to describe instance details
 
 ---
 
 ## Suggested Approach
 
-Explain **how an engineer might think about solving this**, without giving code.
-
-Examples:
-- Which system commands might be useful
-- Whether iteration or condition checks are required
-- What should be validated before proceeding
-
-This section proves reasoning ability.
+- Validate Input & Exit if invalid or Empty Input is passed
+- Use Ec2 Describe instances aws cli command to fetch the instance deails f
 
 ---
 
 ## Bash vs Python Consideration
 
-Explain **why Bash is suitable**, and **when Python may be preferred**.
-
-Example:
-- Bash is sufficient for simple command execution and parsing
-- Python may improve readability when handling structured data
-
-This is extremely interview-valuable.
+- Expected Output can be achieved by aws cli command, so bash script is preferred
 
 ---
 
 ## Edge Cases to Consider
 
-List things that could go wrong:
-- Missing inputs
-- Empty outputs
-- Permission issues
-- Unexpected command behavior
-
-Even if you don’t handle all of them in code, **acknowledging them matters**.
+- This script doesn't provide resource count symmary, only print ec2 instance details
+- Script doesnt handle logic if ec2 instances are empty for a given region
+- Output in text  for ec2 describe command sorts results in alphabetical order by column, no matter the query order, implementaion logic looping variables are assigned in that matter. Script should be updated if this outcome is not preferred.
 
 ---
 
 ## Learning Outcome
 
-Briefly state what this problem helps you practice:
-- Bash fundamentals
-- Linux concepts
-- AWS CLI usage
-- Error handling
-- Automation thinking
+- AWS Cli command & Working of `--query` argument
+- Validating if a given region is a AWS available region
