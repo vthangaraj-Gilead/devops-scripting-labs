@@ -5,7 +5,6 @@
 #region_list=$(aws ec2 describe-regions --query 'Regions[].RegionName' --output text)
 #echo -e "$region_list\\n"
 read -p $'Enter the aws region to generate the inventory list:\n' region
-flag=0
 
 if [ -z "$region" ]; then
    echo -e "Empty Inputs provided, Provide AWS region\\n"
