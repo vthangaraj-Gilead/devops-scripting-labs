@@ -1,4 +1,4 @@
-# Problem <7>: AWS Security Group Risk Audit
+# Problem: AWS Security Group Risk Audit
 
 ## Scenario
 

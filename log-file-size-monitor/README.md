@@ -1,4 +1,4 @@
-# Problem <2>: Log File Size Monitoring
+# Problem: Log File Size Monitoring
 
 ## Scenario
 

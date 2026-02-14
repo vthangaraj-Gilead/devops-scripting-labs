@@ -1,4 +1,4 @@
-# Problem 8 : Orphan AWS EBS Volume Detector
+# Problem: Orphan AWS EBS Volume Detector
 
 ## Scenario
 

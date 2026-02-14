@@ -1,4 +1,4 @@
-# Problem <5>: File Cleanup Simulator
+# Problem: File Cleanup Simulator
 
 ## Scenario
 

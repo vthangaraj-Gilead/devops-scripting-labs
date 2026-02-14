@@ -1,4 +1,4 @@
-# Problem <4>: Disk Threshold Alert
+# Problem: Disk Threshold Alert
 
 ## Scenario
 

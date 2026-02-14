@@ -1,4 +1,4 @@
-# Problem <6>: AWS EC2 Inventory Report
+# Problem: AWS EC2 Inventory Report
 
 ## Scenario
 
