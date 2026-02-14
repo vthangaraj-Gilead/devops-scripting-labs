@@ -21,7 +21,7 @@
 
 ## Expected Output
 
-- Instances in `stopped` stated will be printed as output
+- InstanceId's of Instances in `stopped` state will be printed as output
 
 ---
 
@@ -29,7 +29,7 @@
 
 - AWS Ec2 Linux Environment
 - Python > 3.9 & pip, boto3 installed.
-- Ec2 instance has iam permissions to describe ec2 instances for us-west-2 region
+- Ec2 instance has IAM permissions to describe ec2 instances for us-west-2 region
 
 
 ---
@@ -51,6 +51,7 @@
 ## Edge Cases to Consider
 
 - Script can only list InstanceId's of instances in stopped state, script needs to be improved if those instances needs to started & run background jobs
+- If required tag value is not added to the ec2 instance, then script will not be able to identify its state.
 
 ---
 
