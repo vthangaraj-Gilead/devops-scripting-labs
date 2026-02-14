@@ -1,102 +1,60 @@
-# Problem <XX>: <Short Descriptive Title>
+# Problem: AWS Instance State Drift Detector
 
 ## Scenario
 
-Describe the real-world operational context.
-
-Explain **why** this problem exists in day-to-day DevOps work.
-Keep it practical and realistic.
-
-Example:
-> During routine operations, engineers often need to quickly verify the state of a system to identify potential issues before they escalate.
+- Sometimes a ec2 instance is expected to be always in `running` state due to scheduled background jobs, cron jobs etc.
+- Due to accidental activity or due to other automation scripts, the instances can be stopped.
 
 ---
 
 ## Objective
 
-Clearly define what the script is expected to achieve.
-
-Focus on **outcome**, not implementation.
+- Identify the instances with  a specific filter is in `running` or `stopped` state.
 
 ---
 
 ## Inputs
 
-List any inputs the script should accept:
-- Command-line arguments
-- Environment variables
-- Configuration values
-
-If there are no inputs, explicitly say so.
+- No Inputs required
 
 ---
 
 ## Expected Output
 
-Describe what the script should produce:
-- Terminal output
-- File output
-- Exit status
-- Summary report
-
-Avoid prescribing exact formatting.
+- Instances in `stopped` stated will be printed as output
 
 ---
 
 ## Constraints & Assumptions
 
-Clarify boundaries:
-- Linux environment
-- Read-only access (if applicable)
-- No destructive actions
-- Expected permissions
+- AWS Ec2 Linux Environment
+- Python > 3.9 & pip, boto3 installed.
+- Ec2 instance has iam permissions to describe ec2 instances for us-west-2 region
 
-This shows operational maturity.
 
 ---
 
 ## Suggested Approach
 
-Explain **how an engineer might think about solving this**, without giving code.
-
-Examples:
-- Which system commands might be useful
-- Whether iteration or condition checks are required
-- What should be validated before proceeding
-
-This section proves reasoning ability.
+- Create a boto3 client for ec2 and configure us-west-2 region
+- using describe instances, filter ec2 instances based on state='stopped' &&  particular tag value
+- Print instance id of those instances.
 
 ---
 
 ## Bash vs Python Consideration
 
-Explain **why Bash is suitable**, and **when Python may be preferred**.
-
-Example:
-- Bash is sufficient for simple command execution and parsing
-- Python may improve readability when handling structured data
-
-This is extremely interview-valuable.
+- Output data can be easily handled in Python, hence python is preffered
 
 ---
 
 ## Edge Cases to Consider
 
-List things that could go wrong:
-- Missing inputs
-- Empty outputs
-- Permission issues
-- Unexpected command behavior
-
-Even if you don’t handle all of them in code, **acknowledging them matters**.
+- Script can only list InstanceId's of instances in stopped state, script needs to be improved if those instances needs to started & run background jobs
 
 ---
 
 ## Learning Outcome
 
-Briefly state what this problem helps you practice:
-- Bash fundamentals
-- Linux concepts
-- AWS CLI usage
-- Error handling
-- Automation thinking
+- Boto3 Implementation
+- Nested For loops
